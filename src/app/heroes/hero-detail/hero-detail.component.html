@@ -1,0 +1,92 @@
+<div class="modal-container">
+  <h2 mat-dialog-title>Manage Hero</h2>
+  <mat-dialog-content class="mat-typography">
+    <form [formGroup]="heroForm">
+      <mat-form-field class="full-width">
+        <mat-label>Name</mat-label>
+        <input
+          appUpperCase
+          matInput
+          placeholder="Name"
+          type="text"
+          formControlName="name"
+          required
+        />
+      </mat-form-field>
+      <div
+        class="form-error-container"
+        *ngIf="heroForm.controls['name'].errors"
+      >
+        <mat-error
+          *ngIf="
+            heroForm.controls['name'].touched &&
+            heroForm.controls['name'].errors['required']
+          "
+        >
+          Name field is mandatory.
+        </mat-error>
+        <mat-error *ngIf="heroForm.controls['name'].errors['pattern']">
+          Name must contain only alphanumeric characters and spaces.
+        </mat-error>
+      </div>
+      <span
+        >{{ heroForm.value.description.length }}/{{
+          MAX_DESCRIPTION_CHARS
+        }}</span
+      >
+      <mat-form-field class="full-width">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          placeholder="Description"
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
+      <div
+        class="form-error-container"
+        *ngIf="heroForm.controls['description'].errors"
+      >
+        <mat-error *ngIf="heroForm.controls['description'].errors['maxlength']">
+          Description must contain a maximum of
+          {{ MAX_DESCRIPTION_CHARS }} characters.
+        </mat-error>
+        <mat-error *ngIf="heroForm.controls['description'].errors['pattern']">
+          Description must contain only alphanumeric characters and spaces.
+        </mat-error>
+        <mat-error
+          *ngIf="
+            heroForm.controls['description'].touched &&
+            heroForm.controls['description'].errors['required']
+          "
+        >
+          Description field is mandatory.
+        </mat-error>
+      </div>
+
+      <section class="full-width">
+        <h4>Power Level {{ heroForm.value.powerLevel }}%</h4>
+        <mat-slider class="dialog-slider" min="0" max="100" step="0.5">
+          <input matSliderThumb formControlName="powerLevel" />
+        </mat-slider>
+      </section>
+
+      <section class="full-width">
+        <mat-label>Favorite</mat-label>
+        <mat-checkbox class="full-width" formControlName="favorite">
+          {{ heroForm.value.favorite ? "Yes" : "No" }}
+        </mat-checkbox>
+      </section>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button color="warn" mat-button mat-dialog-close>Cancel</button>
+    <button
+      [disabled]="!heroForm.valid"
+      mat-button
+      color="primary"
+      [mat-dialog-close]="heroForm.value"
+    >
+      Send
+    </button>
+  </mat-dialog-actions>
+</div>

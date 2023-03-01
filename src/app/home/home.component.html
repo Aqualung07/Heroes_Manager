@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="home-header">Welcome to the Home of Heroes!</div>
+  <div class="hero-container">
+    <mat-card class="hero-item" *ngFor="let hero of heroes$ | async">
+      <mat-card-header>
+        <mat-card-title
+          ><mat-icon
+            *ngIf="hero.favorite"
+            aria-hidden="false"
+            aria-label="Favorite"
+            fontIcon="star"
+            class="fav-icon"
+          ></mat-icon
+          >{{ hero.name }}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        {{ hero.description }}
+      </mat-card-content>
+      <br />
+      <mat-card-content>
+        <span><b>Power Meter</b> </span>
+        <mat-progress-bar
+          mode="determinate"
+          [value]="hero.powerLevel"
+        ></mat-progress-bar>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" [routerLink]="['/hero', hero.id]">
+          View
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div *ngIf="loading$ | async" class="page-spinner">
+    <mat-progress-spinner [diameter]="200" color="primary" mode="indeterminate">
+    </mat-progress-spinner>
+  </div>
+</div>

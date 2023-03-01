@@ -1,0 +1,28 @@
+<div *ngIf="!loading" class="primary-container">
+  <mat-card class="card-container">
+    <mat-card-header>
+      <mat-card-title>{{ hero?.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item [lines]="3">
+          <span matListItemTitle>Description</span>
+          <span>{{ hero?.description }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle>Power Level</span>
+          <span matListItemLine>{{ hero?.powerLevel }}%</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle>Favorite</span>
+          <span matListItemLine>{{ hero?.favorite ? "Yes" : "No" }}</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-content> </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="loading" class="page-spinner">
+  <mat-progress-spinner [diameter]="200" color="primary" mode="indeterminate">
+  </mat-progress-spinner>
+</div>

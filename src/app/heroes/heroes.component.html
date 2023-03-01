@@ -1,0 +1,10 @@
+<div>
+  <app-heroes-list
+    class="primary-container"
+    [heroes]="heroes$ | async"
+    [loading]="loading$ | async"
+    (selected)="selectHero($event)"
+    (deleted)="deleteHero($event)"
+    (filter)="filter($event)"
+  ></app-heroes-list>
+</div>

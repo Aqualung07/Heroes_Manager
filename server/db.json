@@ -1,0 +1,46 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "BATMAN",
+      "description": "Batman is the superhero protector of Gotham City, a tortured, brooding vigilante dressed as a bat who fights against evil and strikes fear into the hearts of criminals everywhere. ",
+      "powerLevel": 60,
+      "favorite": false
+    },
+    {
+      "id": 2,
+      "name": "SUPERMAN ",
+      "description": "Superman, also known as the Man of Steel, is one of the most powerful superheroes in the DC Universe. His abilities include incredible super-strength, super-speed, invulnerability and freezing breath.",
+      "powerLevel": 100,
+      "favorite": true
+    },
+    {
+      "id": 3,
+      "name": "IRON MAN ",
+      "description": "Genius billionaire inventor, industrialist and CEO of Stark Industries Tony Stark was fatally wounded in a war zone in Sin-Cong shortly before being kidnapped by terrorists.",
+      "powerLevel": 70,
+      "favorite": false
+    },
+    {
+      "id": 4,
+      "name": "THOR ",
+      "description": "Leaping from the legends of Norse mythology, the Asgardian God of Thunder, Thor Odinson, is the son of Odin the All-Father and Jord, Elder Goddess and spirit of the Earth.",
+      "powerLevel": 100,
+      "favorite": true
+    },
+    {
+      "id": 5,
+      "name": "LOKI",
+      "description": "Loki Laufeyson, is the Trickster God, God of Mischief, Evil, and Lies, a member of the monstrous Frost Giants of Jotunheim but was adopted and raised among the Asgardians.",
+      "powerLevel": 70,
+      "favorite": false
+    },
+    {
+      "id": 6,
+      "name": "ODIN",
+      "description": "Odin Borson the All-Father is King of Asgard and protector of the Ten Realms. He is a member of the race known as the Asgardians, a group of humanoid beings from the pocket dimension of Asgard.",
+      "powerLevel": 100,
+      "favorite": true
+    }
+  ]
+}
