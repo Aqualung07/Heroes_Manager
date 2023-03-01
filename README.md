@@ -16,7 +16,8 @@ Application that lets you manage a list of Heroes and view their attributes in d
 - On the same root directory, run `.\dockerize-front.ps1` on Power Shell.
   - If you run it on a <b>Windows</b> system, make sure you execute PowerShell as admin and enable the execution of scripts on Power Shell
     `Set-ExecutionPolicy unrestricted`.
-  - If you run it on a <b>Linux</b> based system, make sure you have Power Shell installed and execute `pwsh .\dockerize-front.ps1`.
+  - If you run it on a <b>Linux</b> based system, make sure you have Power Shell installed and execute
+    `pwsh .\dockerize-front.ps1`.
 - Once the image is created and the container is up, navigate to `localhost:8080` to see the client application running.
 
 ## Build
